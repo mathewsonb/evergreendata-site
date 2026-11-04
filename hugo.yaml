@@ -1,0 +1,82 @@
+baseURL: "https://evergreendata.me/"
+locale: "en-us"
+title: "Ben Mathewson | BI & Data Engineer"
+theme: "hugo-profile"
+
+params:
+  # Personal branding & metadata
+  title: "Ben Mathewson"
+  subtitle: "End-to-End Data Products and Consulting"
+  description: "Building scalable data products from the ground up—turning raw pipeline chaos into actionable decision engines."
+  copyright: "Ben Mathewson • Founder, Evergreen Data Architects"
+  customCSS:
+    - "css/custom.css"
+  
+  # Hero Section
+  hero:
+    enable: true
+    greeting: "I'm"
+    name: "Ben Mathewson"
+    title: "End-to-End Data Products and Consulting"
+    summary: "Experienced in designing end-to-end data pipelines, modern data warehousing, and executive dashboards that drive business outcomes."
+    image: "images/projects/eda_logo.jpg"
+    socialLinks:
+      enable: true
+    # Explicitly turn off the decorative SVG grid pattern
+    bottomImage:
+      enable: false
+
+  # About Section (Renders skills inside the about partial)
+  about:
+    enable: true
+    title: "Technical Skills and Services"
+    content: "Experienced BI Engineer and Data Architect specializing in building end-to-end data products that serve real-world business needs."
+    skills:
+      enable: true
+      items:
+        - 'Azure Synapse'
+        - 'Google Apps Script'
+        - 'Python'
+        - 'JavaScript'
+        - 'R'
+        - 'SQL'
+        - 'REST APIs'
+        - 'Tableau'
+        - 'Power BI'
+        - 'Looker'
+        - 'ETL/ELT Pipelines'
+        - 'Data Warehousing'
+        - 'Data Modeling'
+        - 'Data Governance'
+
+  # Projects Section
+  projects:
+    enable: true
+    title: "Products and Projects"
+    items:
+      - title: "Vivida Local Events Aggregator"
+        description: "Hyperlocal event aggregator for Tacoma, WA, built with Python, React, and SQL. Consolidates events from multiple sources into a single, user-friendly interface, with no registration required (100% user privacy commitment)."
+        image: "images/projects/vivida_app.jpg"
+        tags: ["React", "PostgreSQL", "Python", "JavaScript"]
+        links:
+          - icon: "fas fa-external-link-alt"
+            url: "https://mathewsonb.github.io/vivida_app/"
+          - icon: "fab fa-github"
+            url: "https://github.com/mathewsonb/vivida_app"
+
+  # Contact Section
+  contact:
+    enable: true
+    title: "Get In Touch"
+    email: "lifelonglearning@akindledflame.com"
+    btnName: "Send Email"
+    content: "Whether you need end-to-end data products or executive BI consulting through Evergreen Data Architects, feel free to reach out!"
+
+  # Footer Social Links
+  social:
+    - icon: "fab fa-github"
+      url: "https://github.com/mathewsonb"
+    - icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/ben-mathewson/"
+    - icon: "fas fa-envelope"
+      url: "mailto:lifelonglearning@akindledflame.com"

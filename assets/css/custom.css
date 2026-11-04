@@ -1,0 +1,13 @@
+/* Compress Hero container height and pull the next section up */
+#hero, section.hero-section, .hero {
+    min-height: auto !important;
+    height: auto !important;
+    padding-top: 2rem !important;
+    padding-bottom: 1rem !important;
+}
+
+/* Reduce top padding on the About / Skills section */
+#about, section.about-section, .about {
+    padding-top: 1rem !important;
+    margin-top: 0 !important;
+}
