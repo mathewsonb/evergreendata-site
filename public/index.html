@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
-<link rel="icon" href="/fav.png" type="image/gif">
+<link rel="icon" href="/images/projects/eda_favicon.png" type="image/gif">
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,14 +31,14 @@
 <meta property="og:url" content="http://localhost:1313/">
 	<meta property="og:site_name" content="Ben Mathewson | BI &amp; Data Engineer">
 	<meta property="og:title" content="Ben Mathewson | BI &amp; Data Engineer">
-	<meta property="og:description" content="Building scalable data products from the ground up—turning raw pipeline chaos into actionable decision engines.">
+	<meta property="og:description" content="Building scalable data products from the ground up-turning raw pipeline chaos into actionable decision engines.">
 	<meta property="og:locale" content="en_us">
 	<meta property="og:type" content="website">
 
 
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="Ben Mathewson | BI &amp; Data Engineer">
-	<meta name="twitter:description" content="Building scalable data products from the ground up—turning raw pipeline chaos into actionable decision engines.">
+	<meta name="twitter:description" content="Building scalable data products from the ground up-turning raw pipeline chaos into actionable decision engines.">
 
 
 
@@ -72,9 +72,9 @@
     }
     body {
         font-size: 1rem;
-        font-weight: 400;
+        font-weight: 300;
         line-height: 1.5;
-        text-align: left;
+        text-align: right;
     }
 
     html {
@@ -106,7 +106,7 @@
 
 
 
-<meta name="description" content=Building&#32;scalable&#32;data&#32;products&#32;from&#32;the&#32;ground&#32;up—turning&#32;raw&#32;pipeline&#32;chaos&#32;into&#32;actionable&#32;decision&#32;engines.>
+<meta name="description" content=Building&#32;scalable&#32;data&#32;products&#32;from&#32;the&#32;ground&#32;up-turning&#32;raw&#32;pipeline&#32;chaos&#32;into&#32;actionable&#32;decision&#32;engines.>
 <link rel="stylesheet" href="/css/index.css" media="all">
 <link rel="stylesheet" href="/css/projects.css" media="all">
 
@@ -154,13 +154,39 @@ Ben Mathewson | BI &amp; Data Engineer
 
 
 
+<script>
+    var prevScrollPos = window.pageYOffset;
+    window.addEventListener("scroll", function showHeaderOnScroll() {
+        let profileHeaderElem = document.getElementById("profileHeader");
+        let currentScrollPos = window.pageYOffset;
+        let resetHeaderStyle = false;
+        let showNavBarOnScrollUp =  false ;
+        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        if (showNavBar) {
+            profileHeaderElem.classList.add("showHeaderOnTop");
+        } else {
+            resetHeaderStyle = true;
+        }
+        if(currentScrollPos === 0) {
+            resetHeaderStyle = true;
+        }
+        if(resetHeaderStyle) {
+            profileHeaderElem.classList.remove("showHeaderOnTop");
+        }
+        prevScrollPos = currentScrollPos;
+    });
+</script>
+
+
 
 <header id="profileHeader">
-    <nav class="pt-3 navbar navbar-expand-lg ">
+    <nav class="pt-3 navbar navbar-expand-lg animate">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
             
             <a class="navbar-brand primary-font text-wrap" href="/">
                 
+                <img src="./images/projects/eda_favicon.png" width="30" height="30"
+                    class="d-inline-block align-top">
                 Ben Mathewson
                 
             </a>
@@ -194,7 +220,7 @@ Ben Mathewson | BI &amp; Data Engineer
                     
                     <li class="nav-item navbar-text">
                         <a class="nav-link" href="/#about" aria-label="about">
-                            Technical Skills and Services
+                            Services and Skills
                         </a>
                     </li>
                     
@@ -218,7 +244,7 @@ Ben Mathewson | BI &amp; Data Engineer
                     <li class="nav-item navbar-text">
                         <a class="nav-link" href="/#contact"
                             aria-label="contact">
-                            Get In Touch
+                            Contact Me
                         </a>
                     </li>
                     
@@ -260,24 +286,47 @@ Ben Mathewson | BI &amp; Data Engineer
 <div id="content"><section id="hero" class="py-5 align-middle">
     <div class="container px-3 px-sm-5 px-md-5 px-lg-5 pt-lg-3">
         <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-8 content " id="primary-font">
+            <div class="col-sm-12 col-md-12 col-lg-8 content animate" id="primary-font">
                 <span class="subtitle">
-                    
+                    Ben Mathewson, BI Engineer &amp; Data Architect
                 </span>
                 <h1>
-                    End-to-End Data Products and Consulting
+                    Evergreen Data Architects
                 </h1>
                 <h2>
-                    
+                    Your data has possibilities. Your budget has limits. Let&#39;s bridge the gap.
                 </h2>
                 <p class="hero-content">
-                    
+                    Modern data management and analytics solutions that drive business outcomes.
                 </p>
                 <div class="row">
                     <div class="col-auto h-100">
                         
+                        <a href="./docs/Ben_Mathewson_Resume.pdf" class="btn" download
+			  >
+                            Download Resume
+                        </a>
+                        
                     </div>
                     <div class="col-auto px-0 h-100"><span>
+    
+    <span class="px-1">
+        <a href="https://github.com/mathewsonb"
+             target="_blank" 
+            class="btn social-icon"
+        >
+            <i class="fab fa-github"></i>
+        </a>
+    </span>
+    
+    <span class="px-1">
+        <a href="https://linkedin.com/in/ben-mathewson"
+             target="_blank" 
+            class="btn social-icon"
+        >
+            <i class="fab fa-linkedin"></i>
+        </a>
+    </span>
     
 
     
@@ -287,8 +336,8 @@ Ben Mathewson | BI &amp; Data Engineer
             </div>
             <div class="col-sm-12 col-md-12 col-lg-4">
                 <div class="row justify-content-center">
-                    <div class="col-sm-12 col-md-9 pt-5 image  px-5 px-md-5 px-lg-0 text-center">
-                        <img src="images/projects/eda_logo.jpg"
+                    <div class="col-sm-12 col-md-9 pt-5 image animate px-5 px-md-5 px-lg-0 text-center">
+                        <img src="./images/projects/eda_logo.jpg"
                             class="img-thumbnail mx-auto"
                             alt="Ben Mathewson profile image"
                         >
@@ -301,8 +350,14 @@ Ben Mathewson | BI &amp; Data Engineer
 </section>
 <section id="about" class="py-0 py-sm-5">
     <div class="container bg-transparent">
-        <h3 class="text-center bg-transparent">Technical Skills and Services</h3>
+        <h3 class="text-center bg-transparent">Services and Skills</h3>
         <div class="bg-transparent row justify-content-center px-3 py-5">
+            
+            <div class="col-sm-12 col-md-8 col-lg-4 mb-5 mb-sm-0 mb-md-5 mb-lg-0 d-none d-sm-none d-md-block">
+                <div class="image d-flex px-5">
+                    <img src="./images/projects/ete_data_process.jpg" class="img-thumbnail mx-auto rounded-circle" alt="Ben Mathewson profile picture">
+                </div>
+            </div>
             
             <div class="col-sm-12 col-md-12 col-lg-8 content">
                 Experienced BI Engineer and Data Architect specializing in building end-to-end data products that serve real-world business needs.
@@ -391,47 +446,101 @@ Ben Mathewson | BI &amp; Data Engineer
         </div>
     </div>
 </section>
+
+
+
+
 <section id="contact" class="py-5">
-    <div class="container">
-        <h3 class="text-center">Get In Touch</h3>
-        <div class="px-0 px-md-5 px-lg-5">
-            <div class="row justify-content-center px-md-5">
-                <div class="col-md-8 py-3">
-                    <div class="text-center">
-                        Whether you need end-to-end data products or executive BI consulting through Evergreen Data Architects, feel free to reach out!
-                    </div>
-                    
-                    <div class="text-center pt-3">
-                        <a 
-                            href='
-                                    mailto:lifelonglearning@akindledflame.com
-                                  '
-                            target="_blank"
-                            class="btn"
-                        >
-                            Send Email
-                        </a>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
+  <div class="container text-center">
+    <h2 class="text-center mb-4">Contact Me</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <p class="mb-4">Whether you need end-to-end data products or executive BI consulting through Evergreen Data Architects, feel free to reach out!</p>
+        
+        
+        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#interestModal">
+          Send Email
+        </button>
+      </div>
     </div>
-    <div id="contact-form-status"></div>
+  </div>
 </section>
 
 
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="check-circle-fill" viewBox="0 0 16 16">
-    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-  </symbol>
-  <symbol id="info-fill" viewBox="0 0 16 16">
-    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-  </symbol>
-  <symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
-    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-  </symbol>
-</svg>
+<div class="modal fade" id="interestModal" tabindex="-1" aria-labelledby="interestModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-start">
+      <div class="modal-header">
+        <h5 class="modal-title" id="interestModalLabel">Evergreen Data Architects - Inquiry</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="interestForm">
+          <div class="mb-3">
+            <label for="clientName" class="form-label">Your Name / Organization</label>
+            <input type="text" class="form-field form-control" id="clientName" placeholder="e.g., Jane Doe / Acme Corp" required>
+          </div>
+          
+          <div class="mb-3">
+            <label for="serviceInterest" class="form-label">Primary Service Area</label>
+            <select class="form-select" id="serviceInterest" required>
+              <option value="End-to-End Data Pipeline / ETL">End-to-End Data Pipeline / ETL</option>
+              <option value="Data Warehousing & Modeling">Data Warehousing & Modeling</option>
+              <option value="BI Dashboards & Analytics">BI Dashboards & Analytics (Tableau / Power BI)</option>
+              <option value="General Data Product Architecture Consulting">General Architecture Consulting</option>
+              <option value="General Data Product Architecture Consulting">Other</option>
+            </select>
+          </div>
+          
+          <div class="mb-3">
+            <label for="projectDetails" class="form-label">Project Scope & Timeline</label>
+            <textarea class="form-control" id="projectDetails" rows="4" placeholder="Briefly describe what you're looking to build..." required></textarea>
+          </div>
+          
+          <div class="mb-3">
+            <label for="emailAddress" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="emailAddress" placeholder="e.g., jane@acme.com" required>
+          </div>
+
+          <div class="modal-footer px-0 pb-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary">Generate Email & Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('interestForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const recipient = "lifelonglearning@akindledflame.com";
+  const name = document.getElementById('clientName').value;
+  const service = document.getElementById('serviceInterest').value;
+  const details = document.getElementById('projectDetails').value;
+  const email = document.getElementById('emailAddress').value;
+  
+  const subject = encodeURIComponent(`[Inquiry] ${service} - ${name}`);
+  const body = encodeURIComponent(
+    `Hello Ben,\n\n` +
+    `Name/Organization: ${name}\n` +
+    `Service Area: ${service}\n\n` +
+    `Project Details & Scope:\n${details}\n\n` +
+    `Email Address: ${email}\n` +
+    `Best regards,\n${name}`
+  );
+  
+  
+  window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+  
+  
+  const modalEl = document.getElementById('interestModal');
+  const modal = bootstrap.Modal.getInstance(modalEl);
+  modal.hide();
+});
+</script>
 
   </div><footer>
     
@@ -453,6 +562,13 @@ Ben Mathewson | BI &amp; Data Engineer
     <div class="row justify-content-center">
         <div class="col-md-4 text-center">
             
+                <div class="pb-2">
+                    <a href="http://localhost:1313/" title="Ben Mathewson | BI &amp; Data Engineer">
+                        <img alt="Footer logo" src="./images/projects/eda_favicon.png"
+                            height="40px" width="40px">
+                    </a>
+                </div>
+            
             &copy; 2026 Ben Mathewson • Founder, Evergreen Data Architects All Rights Reserved
             <div class="text-secondary">
                 Made with
@@ -470,17 +586,11 @@ Ben Mathewson | BI &amp; Data Engineer
 </div>
 </footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
 <script>
-    if (localStorage.getItem("pref-theme") === "dark") {
+    if (document.body.className.includes("light")) {
         document.documentElement.classList.add('dark');
         document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-        document.documentElement.classList.remove('dark');
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark');
-        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
     }
-
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {

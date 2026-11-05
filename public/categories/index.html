@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
-<link rel="icon" href="/fav.png" type="image/gif">
+<link rel="icon" href="/images/projects/eda_favicon.png" type="image/gif">
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,14 +31,14 @@
 <meta property="og:url" content="http://localhost:1313/categories/">
 	<meta property="og:site_name" content="Ben Mathewson | BI &amp; Data Engineer">
 	<meta property="og:title" content="Categories">
-	<meta property="og:description" content="Building scalable data products from the ground up—turning raw pipeline chaos into actionable decision engines.">
+	<meta property="og:description" content="Building scalable data products from the ground up-turning raw pipeline chaos into actionable decision engines.">
 	<meta property="og:locale" content="en_us">
 	<meta property="og:type" content="website">
 
 
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="Categories">
-	<meta name="twitter:description" content="Building scalable data products from the ground up—turning raw pipeline chaos into actionable decision engines.">
+	<meta name="twitter:description" content="Building scalable data products from the ground up-turning raw pipeline chaos into actionable decision engines.">
 
 
 
@@ -72,9 +72,9 @@
     }
     body {
         font-size: 1rem;
-        font-weight: 400;
+        font-weight: 300;
         line-height: 1.5;
-        text-align: left;
+        text-align: right;
     }
 
     html {
@@ -149,13 +149,39 @@ Categories | Ben Mathewson | BI &amp; Data Engineer
 
 
 
+<script>
+    var prevScrollPos = window.pageYOffset;
+    window.addEventListener("scroll", function showHeaderOnScroll() {
+        let profileHeaderElem = document.getElementById("profileHeader");
+        let currentScrollPos = window.pageYOffset;
+        let resetHeaderStyle = false;
+        let showNavBarOnScrollUp =  false ;
+        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        if (showNavBar) {
+            profileHeaderElem.classList.add("showHeaderOnTop");
+        } else {
+            resetHeaderStyle = true;
+        }
+        if(currentScrollPos === 0) {
+            resetHeaderStyle = true;
+        }
+        if(resetHeaderStyle) {
+            profileHeaderElem.classList.remove("showHeaderOnTop");
+        }
+        prevScrollPos = currentScrollPos;
+    });
+</script>
+
+
 
 <header id="profileHeader">
-    <nav class="pt-3 navbar navbar-expand-lg ">
+    <nav class="pt-3 navbar navbar-expand-lg animate">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
             
             <a class="navbar-brand primary-font text-wrap" href="/">
                 
+                <img src="./images/projects/eda_favicon.png" width="30" height="30"
+                    class="d-inline-block align-top">
                 Ben Mathewson
                 
             </a>
@@ -189,7 +215,7 @@ Categories | Ben Mathewson | BI &amp; Data Engineer
                     
                     <li class="nav-item navbar-text">
                         <a class="nav-link" href="/#about" aria-label="about">
-                            Technical Skills and Services
+                            Services and Skills
                         </a>
                     </li>
                     
@@ -213,7 +239,7 @@ Categories | Ben Mathewson | BI &amp; Data Engineer
                     <li class="nav-item navbar-text">
                         <a class="nav-link" href="/#contact"
                             aria-label="contact">
-                            Get In Touch
+                            Contact Me
                         </a>
                     </li>
                     
@@ -285,6 +311,13 @@ Categories | Ben Mathewson | BI &amp; Data Engineer
     <div class="row justify-content-center">
         <div class="col-md-4 text-center">
             
+                <div class="pb-2">
+                    <a href="http://localhost:1313/" title="Ben Mathewson | BI &amp; Data Engineer">
+                        <img alt="Footer logo" src="./images/projects/eda_favicon.png"
+                            height="40px" width="40px">
+                    </a>
+                </div>
+            
             &copy; 2026 Ben Mathewson • Founder, Evergreen Data Architects All Rights Reserved
             <div class="text-secondary">
                 Made with
@@ -302,17 +335,11 @@ Categories | Ben Mathewson | BI &amp; Data Engineer
 </div>
 </footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
 <script>
-    if (localStorage.getItem("pref-theme") === "dark") {
+    if (document.body.className.includes("light")) {
         document.documentElement.classList.add('dark');
         document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-        document.documentElement.classList.remove('dark');
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark');
-        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
     }
-
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
