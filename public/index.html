@@ -475,36 +475,43 @@ Ben Mathewson | BI &amp; Data Engineer
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="interestForm">
+        <form id="interestForm" action="https://api.web3forms.com/submit" method="POST">
+          
+          <input type="hidden" name="access_key" value="7cf738c1-d915-4c4c-ade3-4a3f52c5c560">
+          <input type="hidden" name="subject" value="New Inquiry for Evergreen Data Architects">
+
           <div class="mb-3">
             <label for="clientName" class="form-label">Your Name / Organization</label>
-            <input type="text" class="form-field form-control" id="clientName" placeholder="e.g., Jane Doe / Acme Corp" required>
+            <input type="text" name="name" class="form-control" id="clientName" placeholder="e.g., Jane Doe / Acme Corp" required>
           </div>
           
           <div class="mb-3">
+            <label for="clientEmail" class="form-label">Your Email Address</label>
+            <input type="email" name="email" class="form-control" id="clientEmail" placeholder="name@company.com" required>
+          </div>
+
+          <div class="mb-3">
             <label for="serviceInterest" class="form-label">Primary Service Area</label>
-            <select class="form-select" id="serviceInterest" required>
+            <select name="service" class="form-select" id="serviceInterest" required>
               <option value="End-to-End Data Pipeline / ETL">End-to-End Data Pipeline / ETL</option>
               <option value="Data Warehousing & Modeling">Data Warehousing & Modeling</option>
-              <option value="BI Dashboards & Analytics">BI Dashboards & Analytics (Tableau / Power BI)</option>
-              <option value="General Data Product Architecture Consulting">General Architecture Consulting</option>
-              <option value="General Data Product Architecture Consulting">Other</option>
+              <option value="BI Dashboards & Analytics">BI Dashboards & Analytics</option>
+              <option value="General Architecture Consulting">General Architecture Consulting</option>
+              <option value="Offer of Employment">Offer of Employment</option>
+              <option value="Other">Other</option>
             </select>
           </div>
           
           <div class="mb-3">
             <label for="projectDetails" class="form-label">Project Scope & Timeline</label>
-            <textarea class="form-control" id="projectDetails" rows="4" placeholder="Briefly describe what you're looking to build..." required></textarea>
+            <textarea name="message" class="form-control" id="projectDetails" rows="4" placeholder="Briefly describe what you're looking to build..." required></textarea>
           </div>
-          
-          <div class="mb-3">
-            <label for="emailAddress" class="form-label">Email Address</label>
-            <input type="email" class="form-control" id="emailAddress" placeholder="e.g., jane@acme.com" required>
-          </div>
+
+          <div id="formStatus" class="mb-3 d-none alert"></div>
 
           <div class="modal-footer px-0 pb-0">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary">Generate Email & Send</button>
+            <button type="submit" id="submitBtn" class="btn btn-primary">Submit Inquiry</button>
           </div>
         </form>
       </div>
@@ -515,30 +522,43 @@ Ben Mathewson | BI &amp; Data Engineer
 <script>
 document.getElementById('interestForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  
-  const recipient = "lifelonglearning@akindledflame.com";
-  const name = document.getElementById('clientName').value;
-  const service = document.getElementById('serviceInterest').value;
-  const details = document.getElementById('projectDetails').value;
-  const email = document.getElementById('emailAddress').value;
-  
-  const subject = encodeURIComponent(`[Inquiry] ${service} - ${name}`);
-  const body = encodeURIComponent(
-    `Hello Ben,\n\n` +
-    `Name/Organization: ${name}\n` +
-    `Service Area: ${service}\n\n` +
-    `Project Details & Scope:\n${details}\n\n` +
-    `Email Address: ${email}\n` +
-    `Best regards,\n${name}`
-  );
-  
-  
-  window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
-  
-  
-  const modalEl = document.getElementById('interestModal');
-  const modal = bootstrap.Modal.getInstance(modalEl);
-  modal.hide();
+  const form = e.target;
+  const status = document.getElementById('formStatus');
+  const btn = document.getElementById('submitBtn');
+
+  btn.disabled = true;
+  btn.innerText = "Sending...";
+
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form)
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      status.className = "mb-3 alert alert-success";
+      status.innerText = "Thank you! Your message has been sent successfully.";
+      status.classList.remove('d-none');
+      form.reset();
+      setTimeout(() => {
+        const modalEl = document.getElementById('interestModal');
+        const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+        modal.hide();
+        status.classList.add('d-none');
+        btn.disabled = false;
+        btn.innerText = "Submit Inquiry";
+      }, 2000);
+    } else {
+      throw new Error(data.message);
+    }
+  })
+  .catch(error => {
+    status.className = "mb-3 alert alert-danger";
+    status.innerText = "Something went wrong. Please try again or reach out directly via email.";
+    status.classList.remove('d-none');
+    btn.disabled = false;
+    btn.innerText = "Submit Inquiry";
+  });
 });
 </script>
 
