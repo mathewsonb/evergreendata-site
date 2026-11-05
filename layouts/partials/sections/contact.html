@@ -28,6 +28,8 @@ OVERRIDE THE DEFAULT CONTACT PARTIAL WITH THIS CUSTOM PARTIAL
       </div>
       <div class="modal-body">
         <form id="interestForm" action="https://api.web3forms.com/submit" method="POST">
+          <!-- Invisible Honeypot field to block spam bots -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
           <!-- Web3Forms Access Key -->
           <input type="hidden" name="access_key" value="7cf738c1-d915-4c4c-ade3-4a3f52c5c560">
           <input type="hidden" name="subject" value="New Inquiry for Evergreen Data Architects">
