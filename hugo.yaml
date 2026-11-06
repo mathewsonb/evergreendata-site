@@ -112,7 +112,7 @@ params:
         tags: ["React", "PostgreSQL", "Python", "JavaScript"]
         links:
           - icon: "fas fa-external-link-alt"
-            url: "https://mathewsonb.github.io/vivida_app/"
+            url: "https://vivida.evergreendata.me/"
           - icon: "fab fa-github"
             url: "https://github.com/mathewsonb/vivida_app"
 
